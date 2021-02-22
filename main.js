@@ -5,12 +5,20 @@ const Discord = require("discord.js"),
 //Client constant 
 const client = new Discord.Client()
 
-bot.on("ready", () => {
+bot.on("ready", (msg) => {
 	console.log("Giddy up!");
-	//Gets the general channel using the channel id
-	var generalChannel = client.channels.get("728075420104130640")
-	//Sends a message to general channel
-	generalChannel.send("Hello, world!")
+});
+
+client.on('message', (receivedMessage) => {
+	//Prevents bot from replying to itself... because that would be very very bad
+	if (receivedMessage.author == client.user) {
+		return
+	}
+
+	//Replys if message is equal to ping
+	if(receivedMessage.content === "ping"){
+		receivedMessage.reply("pong");
+	}
 });
 
 
