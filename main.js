@@ -18,11 +18,12 @@ bot.on("message", msg => {
 			let helpEmbed = new Discord.MessageEmbed()
 				.setColor(0xffaa55)
 				.setTitle("Help")
-				.setURL("https://reyalsyssup.github.io/discord-bot")
+				.setURL("https://github.com/kai-sn-harris/discord-bot")
 				.addFields({ name: "k!ping", value: 'bot replies with "pong!"' });
 
 			msg.reply(helpEmbed);
 		}
+
 	}
 });
 
